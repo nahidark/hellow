@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My School Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PAZION UNIVERSITY</h1>
+        <nav>
+            <ul>
+
+                <li><a href="about_usf.html">About Us</a></li>
+                <li><a href="">login</a></li>
+                <li><a href="gallary.html">gallary</a></li>
+                <li><a href="programs.html">programs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to PAZION UNIVERSITY</h2>
+            <p>Our univrsity is a leading educational institution that provides quality education to students from all backgrounds.</p>
+            <button>Learn More</button>
+        </section>
+        <section class="about">
+            <h2>About Us</h2>
+            <p>Our univerity was founded in 1990 with the aim of providing quality education to students. We have a team of highly qualified teachers who are dedicated to the success of our students.</p>
+            <button>Read More</button>
+        </section>
+        <section class="academics">
+            <h2>Academics</h2>
+            <p>In Our University, we offer a wide range of academic programs that cater to the needs of our students. Our programs are designed to provide a well-rounded education that prepares students for success in their future careers.</p>
+            <button>View Programs</button>
+        </section>
+        <section class="admissions">
+            <h2>Admissions</h2>
+            <p>Admissions to our university is open to all students who meet our admission requirements. We offer a range of scholarships and financial aid options to help students achieve their academic goals.</p>
+            <button>Apply Now<a href="login_complete.html"></a></button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; PAZIOIN Uiveresity 2021</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    nav li {
+        margin-right: 20px;
+    }
+    
+    nav a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    
+    section {
+        flex-basis: 45%;
+        margin-bottom: 20px;
+    }
+    
+    section h2 {
+        margin-top: 0;
+    }
+    
+    button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #555;
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .hero {
+        background-image: url('hero.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        text-align: center;
+        padding: 100px 0;
+    }
+    
+    .about {
+        background-color: #f2f2f2;
+        padding: 50px;
+    }
+    
+    .academics {
+        background-color: #e6e6e6;
+        padding: 50px;
+    }
+    
+    .admissions {
+        background-color: #d9d9d9;
+        padding: 50px;
+    }
+</style>
+<script>
+    // Add event listener to buttons
+    var buttons = document.querySelectorAll('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function() {
+            alert('This feature is coming soon!');
+        });
+    }
+</script>
