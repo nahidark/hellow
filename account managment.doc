@@ -1,0 +1,98 @@
+﻿import 'package:flutter/material.dart';
+
+class AccountManagementPage extends StatefulWidget {
+  @override
+  _AccountManagementPageState createState() => _AccountManagementPageState();
+}
+
+class _AccountManagementPageState extends State<AccountManagementPage> {
+  String accountNumber = '1234567890';
+  double accountBalance = 1000.0;
+
+  void checkBalance() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Account Balance'),
+          content: Text('Your current balance is: $accountBalance'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void deposit(double amount) {
+    setState(() {
+      accountBalance += amount;
+    });
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Deposit Successful'),
+          content: Text('Deposit of $amount completed successfully.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Account Management'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Account Number: $accountNumber',
+              style: TextStyle(fontSize: 18.0),
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Balance: $accountBalance',
+              style: TextStyle(fontSize: 18.0),
+            ),
+            SizedBox(height: 32.0),
+            ElevatedButton(
+              onPressed: checkBalance,
+              child: Text('Check Balance'),
+            ),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                deposit(100.0);
+              },
+              child: Text('Make Deposit'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: AccountManagementPage(),
+  ));
+}
